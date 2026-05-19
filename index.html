@@ -37,7 +37,7 @@
  
     body::before {
       content: '';
-      position: fixed;
+      position: ed;
       inset: 0;
       background-image: radial-gradient(circle, rgba(125,249,170,0.07) 1px, transparent 1px);
       background-size: 30px 30px;
@@ -47,7 +47,7 @@
  
     /* ══ NAV ══════════════════════════════════════════════ */
     nav {
-      position: fixed;
+      position: ed;
       top: 0; left: 0; right: 0;
       height: var(--nav-h);
       background: rgba(12,12,14,0.88);
@@ -83,7 +83,6 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
  
-    /* FIX 1: No download attribute — opens PDF in new tab for print preview */
     .nav-resume {
       display: inline-flex;
       align-items: center;
@@ -179,8 +178,6 @@
       padding-top: var(--nav-h);
     }
  
-    /* FIX 2: Wider gap reduced so profile column sits further left;
-       column ratio gives more breathing room to the right content side */
     .hero-inner {
       max-width: var(--max-w);
       margin: 0 auto;
@@ -195,7 +192,6 @@
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
     }
  
-    /* FIX 2: align-items: flex-start keeps name/role/icons left-aligned under pic */
     .hero-profile {
       display: flex;
       flex-direction: column;
@@ -205,7 +201,6 @@
       animation: fadeUp 0.55s ease forwards 0.1s;
     }
  
-    /* FIX 2: Larger profile picture */
     .hero-pic {
       width: clamp(150px, 19vw, 215px);
       height: clamp(150px, 19vw, 215px);
@@ -281,8 +276,7 @@
       opacity: 0;
       animation: fadeUp 0.5s ease forwards 0.25s;
     }
- 
-    /* FIX 3: Larger description text with more room to breathe */
+
     .hero-about {
       font-size: clamp(1rem, 1.9vw, 1.18rem);
       color: var(--muted);
@@ -744,8 +738,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
- 
-  <!-- FIX 1: No download attr + target="_blank" opens PDF in browser for print preview -->
+
   <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener" class="nav-resume">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
@@ -764,7 +757,6 @@
 <section id="hero">
   <div class="hero-inner">
  
-    <!-- FIX 2: Profile column — larger pic, left-aligned elements -->
     <div class="hero-profile">
       <div class="hero-pic">
         <div class="hero-pic-fallback">AT</div>
@@ -802,7 +794,6 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Open to opportunities</div>
  
-      <!-- FIX 3: Larger text, wider container — see .hero-about in CSS -->
       <p class="hero-about">
         <strong>CS graduate from CUNY Queens College</strong> with a focus on systems
         programming and real-time graphics. I built a full DirectX11 3D game engine from
@@ -818,7 +809,7 @@
           </svg>
           View Projects
         </a>
-        <!-- FIX 1: No download attr — opens PDF in browser for print preview -->
+        
         <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
                stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
@@ -1101,7 +1092,7 @@
   <div class="footer-links">
     <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.linkedin.com/in/Arben-Temaj/" target="_blank" rel="noopener">LinkedIn</a>
-    <!-- FIX 1: No download attr — opens PDF in browser for print preview -->
+    
     <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener">Resume</a>
   </div>
 </footer>
