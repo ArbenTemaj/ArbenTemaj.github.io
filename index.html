@@ -83,7 +83,7 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
  
-    /* FIX 4: no download attribute — opens PDF in new tab for preview */
+    /* FIX 1: No download attribute — opens PDF in new tab for print preview */
     .nav-resume {
       display: inline-flex;
       align-items: center;
@@ -179,13 +179,15 @@
       padding-top: var(--nav-h);
     }
  
+    /* FIX 2: Wider gap reduced so profile column sits further left;
+       column ratio gives more breathing room to the right content side */
     .hero-inner {
       max-width: var(--max-w);
       margin: 0 auto;
       padding: 0 var(--px);
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: clamp(3rem, 6vw, 7rem);
+      gap: clamp(2.5rem, 4vw, 5rem);
       align-items: center;
     }
  
@@ -193,6 +195,7 @@
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
     }
  
+    /* FIX 2: align-items: flex-start keeps name/role/icons left-aligned under pic */
     .hero-profile {
       display: flex;
       flex-direction: column;
@@ -202,9 +205,10 @@
       animation: fadeUp 0.55s ease forwards 0.1s;
     }
  
+    /* FIX 2: Larger profile picture */
     .hero-pic {
-      width: clamp(120px, 16vw, 175px);
-      height: clamp(120px, 16vw, 175px);
+      width: clamp(150px, 19vw, 215px);
+      height: clamp(150px, 19vw, 215px);
       border-radius: 50%;
       border: 2px solid rgba(125,249,170,0.28);
       overflow: hidden;
@@ -224,7 +228,7 @@
       align-items: center;
       justify-content: center;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       color: rgba(125,249,170,0.4);
       letter-spacing: 0.05em;
     }
@@ -278,11 +282,12 @@
       animation: fadeUp 0.5s ease forwards 0.25s;
     }
  
+    /* FIX 3: Larger description text with more room to breathe */
     .hero-about {
-      font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+      font-size: clamp(1rem, 1.9vw, 1.18rem);
       color: var(--muted);
-      line-height: 1.8;
-      max-width: 500px;
+      line-height: 1.85;
+      max-width: 620px;
       opacity: 0;
       animation: fadeUp 0.55s ease forwards 0.4s;
     }
@@ -375,7 +380,6 @@
     }
     @media (max-width: 720px) { .project-flagship { grid-template-columns: 1fr; } }
  
-    /* FIX 2: carousel images fill and scale correctly */
     .carousel {
       position: relative;
       width: 100%;
@@ -384,7 +388,6 @@
       overflow: hidden;
       background: #090910;
     }
-    /* Decorative grid — hidden once real images load */
     .carousel::before {
       content: '';
       position: absolute; inset: 0;
@@ -410,7 +413,6 @@
     }
     .carousel-slide.active { opacity: 1; }
  
-    /* FIX 2: images fill the slide without distortion */
     .carousel-slide img {
       position: absolute;
       inset: 0;
@@ -743,8 +745,8 @@
     </ul>
   </div>
  
-  <!-- FIX 4: removed download attr so PDF opens in browser for preview -->
-  <a href="/uploads/ATemaj_Resume.pdf" target="_blank" class="nav-resume">
+  <!-- FIX 1: No download attr + target="_blank" opens PDF in browser for print preview -->
+  <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener" class="nav-resume">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
       <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 13h12"/>
@@ -762,6 +764,7 @@
 <section id="hero">
   <div class="hero-inner">
  
+    <!-- FIX 2: Profile column — larger pic, left-aligned elements -->
     <div class="hero-profile">
       <div class="hero-pic">
         <div class="hero-pic-fallback">AT</div>
@@ -799,6 +802,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Open to opportunities</div>
  
+      <!-- FIX 3: Larger text, wider container — see .hero-about in CSS -->
       <p class="hero-about">
         <strong>CS graduate from CUNY Queens College</strong> with a focus on systems
         programming and real-time graphics. I built a full DirectX11 3D game engine from
@@ -814,8 +818,8 @@
           </svg>
           View Projects
         </a>
-        <!-- FIX 4: no download attr — opens PDF inline for preview -->
-        <a href="/uploads/ATemaj_Resume.pdf" target="_blank" class="btn btn-outline">
+        <!-- FIX 1: No download attr — opens PDF in browser for print preview -->
+        <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
                stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
             <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 13h12"/>
@@ -838,7 +842,6 @@
  
     <div class="project-flagship reveal">
  
-      <!-- FIX 1 & 2: corrected div nesting — each slide has exactly ONE closing tag -->
       <div class="carousel" id="carousel">
         <div class="carousel-slide active">
           <img src="/uploads/Camera4.PNG" alt="3D Engine - Animation scene">
@@ -876,7 +879,6 @@
           <span class="chip">PBR</span>
         </div>
         <div class="flagship-links">
-          <!-- FIX 3: correct hrefs restore clickability now that div nesting is fixed -->
           <a href="https://github.com/ArbenTemaj/Custom-DirectX11-3D-game-engine"
              target="_blank" rel="noopener" class="flagship-btn flagship-btn-solid">
             <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
@@ -928,7 +930,7 @@
         <a href="https://github.com/ArbenTemaj/HuffmanEncoding-for-txt-files"
            target="_blank" rel="noopener" class="card-btn">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
           </svg>
           GitHub
         </a>
@@ -1099,7 +1101,8 @@
   <div class="footer-links">
     <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.linkedin.com/in/Arben-Temaj/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="/uploads/ATemaj_Resume.pdf" target="_blank">Resume</a>
+    <!-- FIX 1: No download attr — opens PDF in browser for print preview -->
+    <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener">Resume</a>
   </div>
 </footer>
  
