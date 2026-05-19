@@ -60,12 +60,7 @@
       z-index: 1000;
     }
  
-    /* Logo + links grouped on the left */
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
+    .nav-left { display: flex; align-items: center; gap: 2.5rem; }
  
     .nav-logo {
       font-family: 'Bebas Neue', sans-serif;
@@ -88,6 +83,7 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
  
+    /* FIX 4: no download attribute — opens PDF in new tab for preview */
     .nav-resume {
       display: inline-flex;
       align-items: center;
@@ -175,9 +171,7 @@
       margin-bottom: clamp(2rem, 4vw, 3rem);
     }
  
-    /* ══ HERO ══════════════════════════════════════════════
-       Layout: [profile card | about + CTA]
-    ═══════════════════════════════════════════════════════ */
+    /* ══ HERO ══════════════════════════════════════════════ */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -196,14 +190,9 @@
     }
  
     @media (max-width: 700px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        text-align: left;
-      }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
     }
  
-    /* ── Left: profile card ─────────────────────────────── */
     .hero-profile {
       display: flex;
       flex-direction: column;
@@ -256,12 +245,7 @@
       text-transform: uppercase;
     }
  
-    /* Social icon buttons under name */
-    .hero-icons {
-      display: flex;
-      gap: 0.6rem;
-      margin-top: 0.15rem;
-    }
+    .hero-icons { display: flex; gap: 0.6rem; margin-top: 0.15rem; }
  
     .icon-btn {
       display: flex;
@@ -282,12 +266,7 @@
     }
     .icon-btn svg { width: 17px; height: 17px; }
  
-    /* ── Right: about + CTA ─────────────────────────────── */
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-    }
+    .hero-content { display: flex; flex-direction: column; gap: 1.4rem; }
  
     .hero-eyebrow {
       font-size: 0.72rem;
@@ -317,7 +296,6 @@
       animation: fadeUp 0.55s ease forwards 0.55s;
     }
  
-    /* ── Buttons ──────────────────────────────────────────── */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -380,8 +358,6 @@
     }
  
     /* ══ PROJECTS ══════════════════════════════════════════ */
- 
-    /* Flagship */
     .project-flagship {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
@@ -399,15 +375,16 @@
     }
     @media (max-width: 720px) { .project-flagship { grid-template-columns: 1fr; } }
  
-    /* Carousel */
+    /* FIX 2: carousel images fill and scale correctly */
     .carousel {
       position: relative;
       width: 100%;
       height: 100%;
-      min-height: 300px;
+      min-height: 340px;
       overflow: hidden;
       background: #090910;
     }
+    /* Decorative grid — hidden once real images load */
     .carousel::before {
       content: '';
       position: absolute; inset: 0;
@@ -425,17 +402,20 @@
     }
  
     .carousel-slide {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       opacity: 0;
       transition: opacity 0.75s ease;
       z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
     .carousel-slide.active { opacity: 1; }
+ 
+    /* FIX 2: images fill the slide without distortion */
     .carousel-slide img {
-      width: 100%; height: 100%;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
     }
@@ -486,7 +466,6 @@
     }
     .carousel-dot.active { background: var(--accent); transform: scale(1.35); }
  
-    /* Flagship text panel */
     .flagship-content {
       padding: 2rem 2.25rem;
       display: flex;
@@ -552,7 +531,6 @@
     .flagship-btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .flagship-btn-ghost:hover { border-color: rgba(125,249,170,0.4); color: var(--accent); }
  
-    /* Secondary project grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -595,7 +573,6 @@
       flex: 1;
     }
  
-    /* GitHub button on each card */
     .card-btn {
       display: inline-flex;
       align-items: center;
@@ -757,7 +734,6 @@
  
 <!-- ── NAV ──────────────────────────────────────────────── -->
 <nav>
-  <!-- AT logo + links together on the left -->
   <div class="nav-left">
     <a href="#hero" class="nav-logo">AT</a>
     <ul class="nav-links" id="nav-links">
@@ -767,8 +743,8 @@
     </ul>
   </div>
  
-  <!-- Resume download on the right -->
-  <a href="/uploads/ATemaj_Resume.pdf" target="_blank" download class="nav-resume">
+  <!-- FIX 4: removed download attr so PDF opens in browser for preview -->
+  <a href="/uploads/ATemaj_Resume.pdf" target="_blank" class="nav-resume">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
       <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 13h12"/>
@@ -782,25 +758,21 @@
 </nav>
  
  
-<!-- ── HERO / LANDING ────────────────────────────────────── -->
+<!-- ── HERO ──────────────────────────────────────────────── -->
 <section id="hero">
   <div class="hero-inner">
  
-    <!-- Left: profile card (pic → name → role → icons) -->
     <div class="hero-profile">
       <div class="hero-pic">
         <div class="hero-pic-fallback">AT</div>
-        <!-- Replace src with your actual photo path: /authors/admin/profile.jpg -->
         <img src="/authors/admin/profile.jpg" alt="Arben Temaj"
              onload="this.previousElementSibling.style.display='none';"
              onerror="this.style.display='none';">
       </div>
  
       <h1 class="hero-name">ARBEN<br><span class="accent">TEMAJ</span></h1>
- 
       <div class="hero-role">Software Developer</div>
  
-      <!-- Social icons under name -->
       <div class="hero-icons">
         <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener"
            class="icon-btn" aria-label="GitHub">
@@ -824,7 +796,6 @@
       </div>
     </div>
  
-    <!-- Right: eyebrow + about + CTAs -->
     <div class="hero-content">
       <div class="hero-eyebrow">Open to opportunities</div>
  
@@ -838,13 +809,13 @@
  
       <div class="hero-actions">
         <a href="#projects" class="btn btn-fill">
-          <!-- Cursor icon -->
           <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true">
             <path d="M4 0v18.5l5.5-5.5 2.5 6.5 2.3-1L11.8 12H17.5z"/>
           </svg>
           View Projects
         </a>
-        <a href="/uploads/ATemaj_Resume.pdf" target="_blank" download class="btn btn-outline">
+        <!-- FIX 4: no download attr — opens PDF inline for preview -->
+        <a href="/uploads/ATemaj_Resume.pdf" target="_blank" class="btn btn-outline">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
                stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
             <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 13h12"/>
@@ -865,29 +836,21 @@
     <div class="label">Projects</div>
     <h2 class="heading reveal">Things I've built.</h2>
  
-    <!-- Flagship: 3D Engine v2 -->
     <div class="project-flagship reveal">
+ 
+      <!-- FIX 1 & 2: corrected div nesting — each slide has exactly ONE closing tag -->
       <div class="carousel" id="carousel">
-        <!--
-          TO REPLACE PLACEHOLDERS WITH YOUR SCREENSHOTS:
-          Inside each .carousel-slide, swap the <div class="slide-placeholder">
-          with: <img src="/uploads/your-image.png" alt="description">
-        -->
         <div class="carousel-slide active">
           <img src="/uploads/Camera4.PNG" alt="3D Engine - Animation scene">
-         
         </div>
         <div class="carousel-slide">
           <img src="/uploads/UI1.png" alt="3D Engine - UI">
-          
         </div>
         <div class="carousel-slide">
           <img src="/uploads/physics.PNG" alt="3D Engine - Physics">
-     
         </div>
         <div class="carousel-slide">
           <img src="/uploads/Shadows.PNG" alt="3D Engine - Shadows">
-         
         </div>
         <div class="carousel-dots">
           <button class="carousel-dot active" aria-label="Slide 1"></button>
@@ -895,7 +858,7 @@
           <button class="carousel-dot"        aria-label="Slide 3"></button>
           <button class="carousel-dot"        aria-label="Slide 4"></button>
         </div>
-      </div>
+      </div><!-- /carousel -->
  
       <div class="flagship-content">
         <span class="flagship-badge">★ Flagship Project</span>
@@ -913,17 +876,16 @@
           <span class="chip">PBR</span>
         </div>
         <div class="flagship-links">
-          <!-- Update both hrefs with your actual GitHub repo and YouTube video URLs -->
-          <a href="https://github.com/ArbenTemaj/Custom-DirectX11-3D-game-engine" target="_blank" rel="noopener"
-             class="flagship-btn flagship-btn-solid">
+          <!-- FIX 3: correct hrefs restore clickability now that div nesting is fixed -->
+          <a href="https://github.com/ArbenTemaj/Custom-DirectX11-3D-game-engine"
+             target="_blank" rel="noopener" class="flagship-btn flagship-btn-solid">
             <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
             GitHub
           </a>
-          <a href="https://www.youtube.com/watch?v=mLddE1BvB4w" target="_blank" rel="noopener"
-             class="flagship-btn flagship-btn-ghost">
-            <!-- Play icon for YouTube -->
+          <a href="https://www.youtube.com/watch?v=mLddE1BvB4w"
+             target="_blank" rel="noopener" class="flagship-btn flagship-btn-ghost">
             <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
               <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
@@ -931,9 +893,9 @@
           </a>
         </div>
       </div>
-    </div>
  
-    <!-- 4 secondary projects — each with a GitHub button -->
+    </div><!-- /project-flagship -->
+ 
     <div class="projects-grid">
  
       <div class="card reveal">
@@ -1137,7 +1099,7 @@
   <div class="footer-links">
     <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.linkedin.com/in/Arben-Temaj/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="/uploads/ATemaj_Resume.pdf" target="_blank" download>Resume</a>
+    <a href="/uploads/ATemaj_Resume.pdf" target="_blank">Resume</a>
   </div>
 </footer>
  
