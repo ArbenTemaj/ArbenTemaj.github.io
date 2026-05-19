@@ -1,682 +1,1224 @@
-<!DOCTYPE html><html lang="en-us" >
-
-  
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  
-  <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
-  
-  <meta name="author" content="Arben Temaj" />
-  <meta name="description" content="Software Developer" />
-  <link rel="alternate" hreflang="en-us" href="https://ArbenTemaj.github.io/" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <meta name="theme-color" content="#1565c0" />
-  
-  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
-    
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
-  
-      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
-   
-  <link rel="stylesheet" href="/css/wowchemy.481af39c39ffd87b2d14f39943e7c723.css" />
-
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="ATEMAJ" />
-  
-    <link rel="manifest" href="/manifest.webmanifest" />
-  
-  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
-
-  <link rel="canonical" href="https://ArbenTemaj.github.io/" />
-
-  
-  <meta property="twitter:card" content="summary" />
-  
-  <meta property="og:site_name" content="ATEMAJ" />
-  <meta property="og:url" content="https://ArbenTemaj.github.io/" />
-  <meta property="og:title" content="ATEMAJ" />
-  <meta property="og:description" content="Software Developer" /><meta property="og:image" content="https://Arbentemaj.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
-  <meta property="twitter:image" content="https://ArbenTemaj.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
-  
-  <meta property="og:updated_time" content="2030-06-01T13:00:00&#43;00:00" />
-    
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://Arbentemaj.github.io/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "url": "https://ArbenTemaj.github.io/"
-}
-</script>
-  
-<title>ATEMAJ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arben Temaj — Software Developer specializing in C++, systems programming, and computer graphics.">
+  <title>Arben Temaj — Software Developer</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+ 
+  <style>
+    :root {
+      --bg:     #0c0c0e;
+      --bg-2:   #111116;
+      --bg-3:   #16161e;
+      --accent: #7df9aa;
+      --text:   #e8e8ef;
+      --muted:  #7a7a8c;
+      --border: rgba(255,255,255,0.07);
+      --nav-h:  68px;
+      --max-w:  1080px;
+      --px:     clamp(1.5rem, 5vw, 5rem);
+    }
+ 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+ 
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(125,249,170,0.07) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+      z-index: 0;
+    }
+ 
+    /* ══ NAV ══════════════════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: rgba(12,12,14,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--px);
+      z-index: 1000;
+    }
+ 
+    /* Logo + links grouped on the left */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+ 
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      flex-shrink: 0;
+    }
+ 
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+ 
+    .nav-resume {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 0.45rem 1.1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-resume:hover { opacity: 0.82; }
+ 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--text);
+      transition: all 0.3s;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ 
+    @media (max-width: 780px) {
+      .nav-links, .nav-resume { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: var(--nav-h); left: 0; right: 0;
+        background: var(--bg-2);
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem var(--px) 2rem;
+        gap: 1.25rem;
+      }
+      .nav-links.open a { font-size: 1rem; letter-spacing: 0; }
+    }
+ 
+    /* ══ LAYOUT ════════════════════════════════════════════ */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--px); }
+ 
+    section {
+      position: relative;
+      z-index: 1;
+      padding: clamp(5rem, 10vw, 7.5rem) 0;
+    }
+ 
+    .divider {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+ 
+    .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.85rem;
+    }
+ 
+    h2.heading {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 2.85rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+ 
+    /* ══ HERO ══════════════════════════════════════════════
+       Layout: [profile card | about + CTA]
+    ═══════════════════════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-h);
+    }
+ 
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(3rem, 6vw, 7rem);
+      align-items: center;
+    }
+ 
+    @media (max-width: 700px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: left;
+      }
+    }
+ 
+    /* ── Left: profile card ─────────────────────────────── */
+    .hero-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.85rem;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards 0.1s;
+    }
+ 
+    .hero-pic {
+      width: clamp(120px, 16vw, 175px);
+      height: clamp(120px, 16vw, 175px);
+      border-radius: 50%;
+      border: 2px solid rgba(125,249,170,0.28);
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-3);
+      flex-shrink: 0;
+    }
+    .hero-pic img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-pic-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.4rem;
+      color: rgba(125,249,170,0.4);
+      letter-spacing: 0.05em;
+    }
+ 
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      line-height: 0.88;
+      letter-spacing: 0.03em;
+    }
+    .hero-name .accent { color: var(--accent); }
+ 
+    .hero-role {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+ 
+    /* Social icon buttons under name */
+    .hero-icons {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.15rem;
+    }
+ 
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .icon-btn:hover {
+      color: var(--accent);
+      border-color: rgba(125,249,170,0.4);
+      background: rgba(125,249,170,0.06);
+      transform: translateY(-2px);
+    }
+    .icon-btn svg { width: 17px; height: 17px; }
+ 
+    /* ── Right: about + CTA ─────────────────────────────── */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+ 
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards 0.25s;
+    }
+ 
+    .hero-about {
+      font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 500px;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards 0.4s;
+    }
+    .hero-about strong { color: var(--text); font-weight: 600; }
+ 
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards 0.55s;
+    }
+ 
+    /* ── Buttons ──────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      min-width: 148px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.78rem 1.7rem;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.22s ease, opacity 0.18s;
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.025); }
+    .btn svg { flex-shrink: 0; }
+ 
+    .btn-fill {
+      background: var(--accent);
+      color: var(--bg);
+      animation: btn-glow 2.8s ease-in-out infinite;
+    }
+    .btn-fill::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -110%;
+      width: 55%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.38), transparent);
+      transform: skewX(-20deg);
+      animation: btn-shimmer 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .btn-fill:hover { opacity: 0.9; animation: none; box-shadow: 0 8px 30px rgba(125,249,170,0.3); }
+    .btn-fill:hover::after { display: none; }
+ 
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: rgba(125,249,170,0.06);
+      color: var(--accent);
+    }
+ 
+    @keyframes btn-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(125,249,170,0); }
+      50%       { box-shadow: 0 0 20px 6px rgba(125,249,170,0.17); }
+    }
+    @keyframes btn-shimmer {
+      0%        { left: -110%; opacity: 0; }
+      18%       { opacity: 1; }
+      55%, 100% { left: 140%; opacity: 0; }
+    }
+ 
+    /* ══ PROJECTS ══════════════════════════════════════════ */
+ 
+    /* Flagship */
+    .project-flagship {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      min-height: 340px;
+      transition: border-color 0.22s, box-shadow 0.22s;
+    }
+    .project-flagship:hover {
+      border-color: rgba(125,249,170,0.32);
+      box-shadow: 0 18px 54px rgba(125,249,170,0.06);
+    }
+    @media (max-width: 720px) { .project-flagship { grid-template-columns: 1fr; } }
+ 
+    /* Carousel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      overflow: hidden;
+      background: #090910;
+    }
+    .carousel::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(125,249,170,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125,249,170,0.04) 1px, transparent 1px);
+      background-size: 38px 38px;
+      z-index: 0;
+    }
+    .carousel::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(125,249,170,0.055) 0%, transparent 68%);
+      z-index: 0;
+    }
+ 
+    .carousel-slide {
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity 0.75s ease;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-slide.active { opacity: 1; }
+    .carousel-slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+ 
+    .slide-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .slide-placeholder-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: rgba(125,249,170,0.1);
+      letter-spacing: 0.05em;
+    }
+    .slide-placeholder-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(125,249,170,0.28);
+      border: 1px solid rgba(125,249,170,0.1);
+      padding: 0.32rem 0.8rem;
+      border-radius: 3px;
+    }
+ 
+    .carousel-dots {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.45rem;
+      z-index: 10;
+    }
+    .carousel-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .carousel-dot.active { background: var(--accent); transform: scale(1.35); }
+ 
+    /* Flagship text panel */
+    .flagship-content {
+      padding: 2rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      justify-content: center;
+    }
+ 
+    .flagship-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 0.22rem 0.65rem;
+      border-radius: 3px;
+      width: fit-content;
+    }
+    .flagship-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .flagship-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+ 
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .chip {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.18rem 0.55rem;
+    }
+ 
+    .flagship-links { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 0.25rem; }
+    .flagship-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.52rem 1.15rem;
+      border-radius: 5px;
+      transition: transform 0.18s, opacity 0.18s, border-color 0.18s, color 0.18s;
+    }
+    .flagship-btn svg { flex-shrink: 0; }
+    .flagship-btn:hover { transform: translateY(-2px); }
+    .flagship-btn-solid { background: var(--accent); color: var(--bg); }
+    .flagship-btn-solid:hover { opacity: 0.85; }
+    .flagship-btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .flagship-btn-ghost:hover { border-color: rgba(125,249,170,0.4); color: var(--accent); }
+ 
+    /* Secondary project grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+ 
+    .card {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
+    }
+    .card:hover {
+      border-color: rgba(125,249,170,0.28);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(125,249,170,0.05);
+    }
+ 
+    .card-tag {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+ 
+    /* GitHub button on each card */
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.45rem 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      margin-top: 0.4rem;
+      width: fit-content;
+      transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.18s;
+    }
+    .card-btn svg { flex-shrink: 0; }
+    .card-btn:hover {
+      color: var(--accent);
+      border-color: rgba(125,249,170,0.4);
+      background: rgba(125,249,170,0.05);
+      transform: translateY(-1px);
+    }
+ 
+    /* ══ SKILLS ════════════════════════════════════════════ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-group {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+    }
+    .skill-group-title {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .skill-list { display: flex; flex-direction: column; gap: 0.48rem; }
+    .skill-item {
+      font-size: 0.875rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .skill-item::before {
+      content: '';
+      flex-shrink: 0;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.65;
+    }
+ 
+    /* ══ CONTACT ══════════════════════════════════════════ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+ 
+    .contact-blurb { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 2rem; }
+ 
+    .contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--accent); }
+    .contact-icon {
+      width: 34px; height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+    .contact-icon svg { width: 16px; height: 16px; }
+    .contact-link:hover .contact-icon { border-color: rgba(125,249,170,0.4); }
+ 
+    .contact-form { display: flex; flex-direction: column; gap: 0.9rem; }
+    .field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .field label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .field input, .field textarea {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.72rem 1rem;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+    .field input:focus, .field textarea:focus { border-color: rgba(125,249,170,0.4); }
+    .field textarea { min-height: 115px; }
+ 
+    /* ══ FOOTER ════════════════════════════════════════════ */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 1.75rem var(--px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    footer p { color: var(--muted); font-size: 0.78rem; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text); }
+ 
+    /* ══ ANIMATIONS ════════════════════════════════════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+ 
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
 </head>
-
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper   "  >
-<script src="/js/wowchemy-init.min.8988fb2a4bba758785868cfcb5244555.js"></script>
-
-<aside class="search-modal" id="search">
-  <div class="container">
-    
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Search</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Search...">
-        
-      </div>
-    </section>
-    
-    <section class="section-search-results">
-      <div id="search-hits"> 
-      </div>
-    </section>
-    
-  </div>
-</aside>
-
-<div class="page-header">
-    
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">ATEMAJ</a>
-    </div>
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">ATEMAJ</a>
-    </div>
-  
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">  
-      <ul class="navbar-nav d-md-inline-flex">
-        
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Home</span></a>
-        </li> 
-          
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Projects</span></a>
-        </li>
-          
-        <li class="nav-item">
-          <a class="nav-link " href="/#skills"><span>Skills</span></a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contact</span></a>
-        </li>
-            
-      </ul>
-    </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
-      
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
-          <i class="fas fa-moon" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-
+<body>
+ 
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <!-- AT logo + links together on the left -->
+  <div class="nav-left">
+    <a href="#hero" class="nav-logo">AT</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-
   </div>
+ 
+  <!-- Resume download on the right -->
+  <a href="/uploads/ATemaj_Resume.pdf" target="_blank" download class="nav-resume">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
+      <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 13h12"/>
+    </svg>
+    Resume
+  </a>
+ 
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
-  </div>
-
-  <div class="page-body">
-    
-<span class="js-widget-page d-none"></span>
-
-  <section id="about" class="home-section wg-about  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-<div class="row">
-  <div class="col-12 col-lg-4">
-    <div id="profile">
-
-      <img class="avatar avatar-circle"
-           width="270" height="270"
-           src="/authors/admin/profile.jpg" alt="Arben Temaj">
-      
-      <div class="portrait-title">
-        <h2>Arben Temaj</h2>
-        <h3>Software Developer</h3>
  
-        <h3>
-          <a href="https://github.com/ArbenTemaj?tab=repositories" target="_blank" rel="noopener">
-          <span>Projects</span>
-          </a>
-        </h3>
-        
-        <h3>
-          <a href="https://www.qc.cuny.edu/" target="_blank" rel="noopener">
-          <span>Queens College of City University of New York</span>
-          </a>
-        </h3>
-        
+ 
+<!-- ── HERO / LANDING ────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-inner">
+ 
+    <!-- Left: profile card (pic → name → role → icons) -->
+    <div class="hero-profile">
+      <div class="hero-pic">
+        <div class="hero-pic-fallback">AT</div>
+        <!-- Replace src with your actual photo path: /authors/admin/profile.jpg -->
+        <img src="/authors/admin/profile.jpg" alt="Arben Temaj"
+             onload="this.previousElementSibling.style.display='none';"
+             onerror="this.style.display='none';">
       </div>
-
-      <ul class="network-icon" aria-hidden="true">
-        
-        <li>
-          <a href="/#contact"  aria-label="envelope">
-            <i class="fas fa-envelope big-icon"></i>
+ 
+      <h1 class="hero-name">ARBEN<br><span class="accent">TEMAJ</span></h1>
+ 
+      <div class="hero-role">Software Developer</div>
+ 
+      <!-- Social icons under name -->
+      <div class="hero-icons">
+        <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener"
+           class="icon-btn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/Arben-Temaj/" target="_blank" rel="noopener"
+           class="icon-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="mailto:arbentemaj@gmail.com" class="icon-btn" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m2 7 10 7 10-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+ 
+    <!-- Right: eyebrow + about + CTAs -->
+    <div class="hero-content">
+      <div class="hero-eyebrow">Open to opportunities</div>
+ 
+      <p class="hero-about">
+        <strong>CS graduate from CUNY Queens College</strong> with a focus on systems
+        programming and real-time graphics. I built a full DirectX11 3D game engine from
+        scratch — PBR rendering, NVIDIA PhysX integration, skeletal animation — and have
+        shipped data compression tools and REST API applications along the way. Looking for
+        my first engineering role to bring these skills into a professional setting.
+      </p>
+ 
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-fill">
+          <!-- Cursor icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13" aria-hidden="true">
+            <path d="M4 0v18.5l5.5-5.5 2.5 6.5 2.3-1L11.8 12H17.5z"/>
+          </svg>
+          View Projects
+        </a>
+        <a href="/uploads/ATemaj_Resume.pdf" target="_blank" download class="btn btn-outline">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
+            <path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 13h12"/>
+          </svg>
+          Resume
+        </a>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<hr class="divider">
+ 
+<!-- ── PROJECTS ──────────────────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <div class="label">Projects</div>
+    <h2 class="heading reveal">Things I've built.</h2>
+ 
+    <!-- Flagship: 3D Engine v2 -->
+    <div class="project-flagship reveal">
+      <div class="carousel" id="carousel">
+        <!--
+          TO REPLACE PLACEHOLDERS WITH YOUR SCREENSHOTS:
+          Inside each .carousel-slide, swap the <div class="slide-placeholder">
+          with: <img src="/uploads/your-image.png" alt="description">
+        -->
+        <div class="carousel-slide active">
+          <div class="slide-placeholder">
+            <div class="slide-placeholder-num">01</div>
+            <div class="slide-placeholder-label">Add screenshot</div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="slide-placeholder">
+            <div class="slide-placeholder-num">02</div>
+            <div class="slide-placeholder-label">Add screenshot</div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="slide-placeholder">
+            <div class="slide-placeholder-num">03</div>
+            <div class="slide-placeholder-label">Add screenshot</div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="slide-placeholder">
+            <div class="slide-placeholder-num">04</div>
+            <div class="slide-placeholder-label">Add screenshot</div>
+          </div>
+        </div>
+        <div class="carousel-dots">
+          <button class="carousel-dot active" aria-label="Slide 1"></button>
+          <button class="carousel-dot"        aria-label="Slide 2"></button>
+          <button class="carousel-dot"        aria-label="Slide 3"></button>
+          <button class="carousel-dot"        aria-label="Slide 4"></button>
+        </div>
+      </div>
+ 
+      <div class="flagship-content">
+        <span class="flagship-badge">★ Flagship Project</span>
+        <div class="flagship-title">3D Game Engine (v2)</div>
+        <div class="flagship-desc">
+          A closed-source real-time 3D engine featuring a physically-based rendering pipeline,
+          NVIDIA PhysX integration, skeletal animation blending, and a full post-processing
+          stack — bloom, volumetric fog, and color grading.
+        </div>
+        <div class="chip-row">
+          <span class="chip">C++</span>
+          <span class="chip">DirectX 11</span>
+          <span class="chip">NVIDIA PhysX</span>
+          <span class="chip">HLSL</span>
+          <span class="chip">PBR</span>
+        </div>
+        <div class="flagship-links">
+          <!-- Update both hrefs with your actual GitHub repo and YouTube video URLs -->
+          <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener"
+             class="flagship-btn flagship-btn-solid">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
           </a>
-        </li>
-        
-        <li>
-          <a href="https://www.linkedin.com/in/Arben-Temaj/" target="_blank" rel="noopener" aria-label="linkedin">
-            <i class="fab fa-linkedin-in big-icon"></i>
+          <a href="https://youtube.com" target="_blank" rel="noopener"
+             class="flagship-btn flagship-btn-ghost">
+            <!-- Play icon for YouTube -->
+            <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            YouTube
           </a>
-        </li>  
-      
-        <li>
-          <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener" aria-label="github">
-            <i class="fab fa-github big-icon"></i>
-          </a>
-        </li>
-        
-      </ul>
-
+        </div>
+      </div>
+    </div>
+ 
+    <!-- 4 secondary projects — each with a GitHub button -->
+    <div class="projects-grid">
+ 
+      <div class="card reveal">
+        <div class="card-tag">Systems · C++ / DirectX</div>
+        <div class="card-title">3D Game Engine (v1)</div>
+        <div class="card-desc">A fully functional 3D engine built from scratch using DirectX11 — rendering pipelines, scene management, and real-time input. The foundation v2 was built on.</div>
+        <div class="chip-row" style="margin-top:0.2rem;">
+          <span class="chip">C++</span>
+          <span class="chip">DirectX 11</span>
+          <span class="chip">HLSL</span>
+        </div>
+        <a href="https://github.com/ArbenTemaj/3D-Game-Engine-Project--PESP-"
+           target="_blank" rel="noopener" class="card-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+ 
+      <div class="card reveal">
+        <div class="card-tag">Algorithms · Java</div>
+        <div class="card-title">Huffman Compression Tool</div>
+        <div class="card-desc">Lossless text file compression and decompression using the Huffman encoding algorithm. Applies trees, priority queues, and bitwise operations in practice.</div>
+        <div class="chip-row" style="margin-top:0.2rem;">
+          <span class="chip">Java</span>
+          <span class="chip">Trees</span>
+          <span class="chip">Priority Queues</span>
+        </div>
+        <a href="https://github.com/ArbenTemaj/HuffmanEncoding-for-txt-files"
+           target="_blank" rel="noopener" class="card-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+ 
+      <div class="card reveal">
+        <div class="card-tag">App · Java</div>
+        <div class="card-title">Restaurant Menu App</div>
+        <div class="card-desc">A functional restaurant menu application with a GUI built using Java Swing, applying OOP design principles and event-driven programming patterns.</div>
+        <div class="chip-row" style="margin-top:0.2rem;">
+          <span class="chip">Java</span>
+          <span class="chip">Swing</span>
+          <span class="chip">OOP</span>
+        </div>
+        <a href="https://github.com/ArbenTemaj/Restaurant-Menu"
+           target="_blank" rel="noopener" class="card-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+ 
+      <div class="card reveal">
+        <div class="card-tag">Web · Node.js</div>
+        <div class="card-title">Wallpaper Generator</div>
+        <div class="card-desc">Integrates a third-party REST API to serve random wallpapers on demand — demonstrating API authentication and async request handling in Node.js.</div>
+        <div class="chip-row" style="margin-top:0.2rem;">
+          <span class="chip">Node.js</span>
+          <span class="chip">REST API</span>
+          <span class="chip">JavaScript</span>
+        </div>
+        <a href="https://github.com/ArbenTemaj/RandomWallpaperGenerator"
+           target="_blank" rel="noopener" class="card-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+ 
     </div>
   </div>
-  <div class="col-12 col-lg-8">
-   
-    <h1>About Me</h1>
-
-    <div class="article-style">
-      <p>Hi, I am Arben Temaj, as a dedicated and passionate computer science graduate, I am deeply motivated by the transformative power of software development. With a keen eye for innovation and a relentless drive for excellence, I am committed to pushing the boundaries of what's possible within my projects. My journey in software development has been marked by a profound enthusiasm for crafting immersive experiences, exemplified by my creation of a captivating 3D game from scratch.</p>
-<p>Here you can find my work, socials, and resume. Thank you and I look forward to hearing from you!</p>
-<p>
-  <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/uploads/ATemaj_Resume.pdf" target="_blank">resumé</a>.</p>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-5">
-        <div class="section-subheading">Interests</div>
-        <ul class="ul-interests mb-0">
-          
-          <li>Software Development</li>
-          
-          <li>3D Graphics Design</li>
-          
-          <li>Machine learning</li>
-          
-          <li>Artificial Intelligence</li>
-          
-          <li>Data analysis</li>
-          
-          <li>DBMS</li>
-          
-        </ul>
+</section>
+ 
+<hr class="divider">
+ 
+<!-- ── SKILLS ──────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <div class="label">Skills</div>
+    <h2 class="heading reveal">What I work with.</h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-list">
+          <div class="skill-item">C++</div>
+          <div class="skill-item">Java</div>
+          <div class="skill-item">Python</div>
+          <div class="skill-item">JavaScript</div>
+          <div class="skill-item">SQL</div>
+          <div class="skill-item">HTML / CSS</div>
+        </div>
       </div>
-       
-      <div class="col-md-7">
-        <div class="section-subheading">Education</div>
-        <ul class="ul-edu fa-ul mb-0">
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">Bachelor of Arts: Computer Science, Jun 2023</p>
-              <p class="institution">City University of New York - Queens College</p>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Graphics &amp; Systems</div>
+        <div class="skill-list">
+          <div class="skill-item">DirectX 11</div>
+          <div class="skill-item">HLSL Shaders</div>
+          <div class="skill-item">NVIDIA PhysX</div>
+          <div class="skill-item">PBR Rendering</div>
+          <div class="skill-item">Skeletal Animation</div>
+          <div class="skill-item">Real-Time Pipelines</div>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Concepts</div>
+        <div class="skill-list">
+          <div class="skill-item">Object-Oriented Programming</div>
+          <div class="skill-item">Data Structures &amp; Algorithms</div>
+          <div class="skill-item">RESTful APIs</div>
+          <div class="skill-item">Relational Databases</div>
+          <div class="skill-item">SDLC / Agile Scrum</div>
+          <div class="skill-item">CI/CD Pipelines</div>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Tools &amp; Frameworks</div>
+        <div class="skill-list">
+          <div class="skill-item">Git &amp; Version Control</div>
+          <div class="skill-item">React.js</div>
+          <div class="skill-item">Node.js</div>
+          <div class="skill-item">Docker</div>
+          <div class="skill-item">MongoDB</div>
+          <div class="skill-item">QA Testing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<hr class="divider">
+ 
+<!-- ── CONTACT ──────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="label">Contact</div>
+    <h2 class="heading reveal">Let's talk.</h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-blurb">Open to entry-level software engineering roles. If you think I'd be a fit, or just want to talk tech, feel free to reach out.</p>
+        <div class="contact-links">
+          <a href="mailto:arbentemaj@gmail.com" class="contact-link">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 7 10 7 10-7"/>
+              </svg>
             </div>
-          </li>
-          
-        </ul>
+            arbentemaj@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/Arben-Temaj/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            linkedin.com/in/Arben-Temaj
+          </a>
+          <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </div>
+            github.com/ArbenTemaj
+          </a>
+        </div>
       </div>
-
-    </div>
-  </div>
-</div>
-
-    </div>
-  </section>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-  <section id="projects" class="home-section wg-pages  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-      <div class="row  ">
-      
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Projects</h1>
-            
-          </div>
-        
-  <div class="col-12 col-lg-8"> 
-    
-    
-    
-    
-    
-    
-  <div class="view-list-item">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <a>3D game/engine in C++</a>      
-  
-  <div class="article-metadata"> 
-  <span><strong>3D Game Engine using DirectX11 graphics API</strong></span> 
-  </div>
-    
-  <div class="btn-links">
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/ArbenTemaj/3D-Game-Engine-Project--PESP-" target="_blank" rel="noopener">
-    Repo
-  </a> 
-    <div>
-    <img class="w3-round"
-           width="300" height="300"
-           src="/uploads/s2.png" alt="Arben Temaj"> 
-    </div>
-  </div>
-    </div>
-     
-    
-    
-        
-  <div class="view-list-item">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <a>Restaurant Application in Java</a>      
-  
-  <div class="article-metadata"> 
-  <span><strong>A functional restaurant menu with GUI uisng JAVA</strong></span> 
-  </div>
-  
-  <div class="btn-links">
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/ArbenTemaj/Restaurant-Menu/tree/main" target="_blank" rel="noopener">
-    Repo
-  </a>
-    <div>
-    <img class="w3-round"
-           width="300" height="300"
-           src="/uploads/s5.png" alt="Arben Temaj"> 
-    </div>
-  </div>
-    </div>
-    
-    
-    
-  <div class="view-list-item">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <a>txt file compression and decompression in Java</a>      
-  
-  <div class="article-metadata"> 
-  <span><strong>huffman encoding to achieve lossless compression and decompression of the compressed file uisng JAVA</strong></span> 
-  </div>
-  
-  <div class="btn-links">
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/ArbenTemaj/HuffmanEncoding-for-txt-files/tree/main" target="_blank" rel="noopener">
-    Repo
-  </a>
-  <div>
-    <img class="w3-round"
-           width="300" height="300"
-           src="/uploads/s4.png" alt="Arben Temaj"> 
-  </div>
-  </div>
-    </div>
-    
-    
-    
-    
-    
-  
-  <div class="view-list-item">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <a>Random wallpaper generator through a third party API</a>    
-  
-  <div class="article-metadata">
-  <span><strong>Using an API key to grant access to random wallpapers using Node.JS</strong></span>  
-  </div>
-  
-  <div class="btn-links">
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/ArbenTemaj/RandomWallpaperGenerator/tree/main" target="_blank" rel="noopener">
-    Repo
-  </a>
-  </div>
-    </div>
-    
-    
-    
-    
-    
-  <div class="view-list-item">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <a>TicTacToe game in C++</a>      
-  
-  <div class="article-metadata"> 
-  <span><strong>A simple tictactoe game using C++</strong></span> 
-  </div>
-    
-  <div class="btn-links">
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/ArbenTemaj/TictacToe/tree/main" target="_blank" rel="noopener">
-    Repo
-  </a> 
-  </div>
-    </div>
-    
-    
-    
-    
-    
-    
-  <div class="view-list-item">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <a>Apple iOS Calculator</a>      
-  
-  <div class="article-metadata"> 
-  <span><strong>An Apple iOS calculator using CSS and JS</strong></span>  
-  </div>
-    
-  <div class="btn-links">
-  <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/ArbenTemaj/iOScalculator/tree/main" target="_blank" rel="noopener">
-    Repo
-  </a> 
-  </div>
-    </div>
-        
  
-
-  </div> 
-    </div>
-        </div>
-  </section>
-    
-    
-    
-    
-    
-    
-   
-    
-    
-   <section id="skills" class="home-section wg-pages  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-   <div class="container">
-
-      <div class="row  ">
-      
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Skills</h1>
-            
+      <div class="reveal">
+        <form class="contact-form" name="contact" method="POST" netlify netlify-honeypot="_trap">
+          <input type="hidden" name="form-name" value="contact">
+          <div style="display:none"><label>Skip: <input name="_trap"></label></div>
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input type="text" id="c-name" name="name" placeholder="Your name" required>
           </div>
-        
-  <div class="col-12 col-lg-8">
-    
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>
-  <a>C++</a>      
-    </div>
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>
-  <a>Java</a>
-    </div>
-   
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>JavaScript</a>
-    </div>
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>Python</a>
-    </div>
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>SQL</a>
-    </div>
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>React.js</a>
-    </div>
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>CSS</a>
-    </div>
-   
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>html</a>
-    </div> 
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>QA Testing</a>
-    </div>
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>Git</a>
-    </div>
-    
-  <div class="view-list-item">
-  <i class="fa fa-plus-square" aria-hidden="true"></i>  
-  <a>Object-Oriented Programming</a>
-    </div>
-    
-    
-   
-     
-    
-    
-    
-    
-    
-
-       </div>
-  </section>
-      
-      
-      
-      
-      
-
-  <section id="contact" class="home-section wg-contact  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-      <div class="row  ">
-      
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Contact</h1>
-            
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" name="email" placeholder="your@email.com" required>
           </div>
-        
-<div class="col-12 col-lg-8">
- 
-    <div class="mb-3">
-      <form name="contact" method="POST" netlify netlify-honeypot="_gotcha"  >
-        <div class="form-group form-inline">
-          <label class="sr-only" for="inputName">Name</label>
-          <input type="text" name="name" class="form-control w-100" id="inputName" placeholder="Name" required>
-        </div>
-        <div class="form-group form-inline">
-          <label class="sr-only" for="inputEmail">Email</label>
-          <input type="email" name="email" class="form-control w-100" id="inputEmail" placeholder="Email" required>
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="inputMessage">Message</label>
-          <textarea name="message" class="form-control" id="inputMessage" rows="5" placeholder="Message" required></textarea>
-        </div>
-        
-        <div class="d-none">
-          <label>Do not fill this field unless you are a bot: <input name="_gotcha"></label>
-        </div>
-        
-        <button type="submit" class="btn btn-primary px-3 py-2 w-100">Send</button>
-      </form>
-    </div>
-  
-
-  <ul class="fa-ul">
-    
-    <li>
-      <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-      <span id="person-email"><a href="mailto:arbentemaj@gmail.com">arbentemaj@gmail.com</a></span>
-    </li>
-    
-    <li>
-      <i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-      <span id="person-telephone"><a href="tel:313-742-5794">347-698-3603</a></span>
-    </li>
-   
-      <li>
-        <i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-        <span id="person-address">66-17 Forest Ave, Ridgewood, NY, 11385</span>
-      </li>
-    
-  </ul>
-
-</div>
-
+          <div class="field">
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" name="message" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-fill" style="width:100%;">Send Message</button>
+        </form>
       </div>
-   
     </div>
-  </section>
-
   </div>
-
-  <div class="page-footer">
-    <div class="container">
-      <footer class="site-footer">
-  <p class="powered-by">
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.   
-  </p>
+</section>
+ 
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer>
+  <p>© 2026 Arben Temaj — Built from scratch.</p>
+  <div class="footer-links">
+    <a href="https://github.com/ArbenTemaj" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/Arben-Temaj/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="/uploads/ATemaj_Resume.pdf" target="_blank" download>Resume</a>
+  </div>
 </footer>
-
-    </div>
-    
-  </div>
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" crossorigin="anonymous"></script>
-        
-      <script id="search-hit-fuse-template" type="text/x-template">
-        <div class="search-hit" id="summary-{{key}}">
-          <div class="search-hit-content">
-            <div class="search-hit-name">
-              <a href="{{relpermalink}}">{{title}}</a>
-              <div class="article-metadata search-hit-type">{{type}}</div>
-              <p class="search-hit-description">{{snippet}}</p>
-            </div>
-          </div>
-        </div>
-      </script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-      
-    <script src="/en/js/wowchemy.min.d68ecd57c0ec1f1f61d65fd568f1c3a0.js"></script>
-
+ 
+ 
+<script>
+  // ── Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    })
+  );
+ 
+  // ── Carousel
+  (function () {
+    const slides = document.querySelectorAll('#carousel .carousel-slide');
+    const dots   = document.querySelectorAll('#carousel .carousel-dot');
+    let current  = 0;
+    let timer;
+ 
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+ 
+    timer = setInterval(() => goTo(current + 1), 3500);
+ 
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(timer);
+        goTo(i);
+        timer = setInterval(() => goTo(current + 1), 3500);
+      });
+    });
+ 
+    const carousel = document.getElementById('carousel');
+    carousel.addEventListener('mouseenter', () => clearInterval(timer));
+    carousel.addEventListener('mouseleave', () => {
+      timer = setInterval(() => goTo(current + 1), 3500);
+    });
+  })();
+ 
+  // ── Scroll reveal with stagger
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const siblings = [...entry.target.parentElement.querySelectorAll(':scope > .reveal')];
+      const idx = siblings.indexOf(entry.target);
+      entry.target.style.transitionDelay = `${idx * 0.08}s`;
+      entry.target.classList.add('visible');
+      revealObs.unobserve(entry.target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+ 
+  // ── Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navAs    = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${cur}`));
+  }, { passive: true });
+</script>
+ 
 </body>
 </html>
