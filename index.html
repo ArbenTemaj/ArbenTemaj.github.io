@@ -37,7 +37,7 @@
  
     body::before {
       content: '';
-      position: ed;
+      position: fixed;
       inset: 0;
       background-image: radial-gradient(circle, rgba(125,249,170,0.07) 1px, transparent 1px);
       background-size: 30px 30px;
@@ -47,7 +47,7 @@
  
     /* ══ NAV ══════════════════════════════════════════════ */
     nav {
-      position: ed;
+      position: fixed;
       top: 0; left: 0; right: 0;
       height: var(--nav-h);
       background: rgba(12,12,14,0.88);
@@ -179,37 +179,36 @@
     }
  
     .hero-inner {
-      max-width: var(--max-w);
+      max-width: 780px;
       margin: 0 auto;
       padding: 0 var(--px);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: clamp(2.5rem, 4vw, 5rem);
+      display: flex;
+      flex-direction: column;
       align-items: center;
-    }
- 
-    @media (max-width: 700px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
+      text-align: center;
+      gap: 0;
     }
  
     .hero-profile {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 0.85rem;
+      align-items: center;
+      gap: 0;
       opacity: 0;
       animation: fadeUp 0.55s ease forwards 0.1s;
     }
  
     .hero-pic {
-      width: clamp(150px, 19vw, 215px);
-      height: clamp(150px, 19vw, 215px);
+      width: clamp(110px, 14vw, 148px);
+      height: clamp(110px, 14vw, 148px);
       border-radius: 50%;
-      border: 2px solid rgba(125,249,170,0.28);
+      border: 2px solid rgba(125,249,170,0.3);
+      box-shadow: 0 0 0 6px rgba(125,249,170,0.05);
       overflow: hidden;
       position: relative;
       background: var(--bg-3);
       flex-shrink: 0;
+      margin-bottom: 1.5rem;
     }
     .hero-pic img {
       width: 100%; height: 100%;
@@ -223,28 +222,35 @@
       align-items: center;
       justify-content: center;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       color: rgba(125,249,170,0.4);
       letter-spacing: 0.05em;
     }
  
     .hero-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-size: clamp(3.4rem, 8vw, 5.5rem);
       line-height: 0.88;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
     }
     .hero-name .accent { color: var(--accent); }
  
     .hero-role {
-      font-size: 0.82rem;
-      font-weight: 500;
+      font-size: 0.78rem;
+      font-weight: 600;
       color: var(--muted);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      margin-bottom: 1rem;
     }
  
-    .hero-icons { display: flex; gap: 0.6rem; margin-top: 0.15rem; }
+    .hero-icons {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
  
     .icon-btn {
       display: flex;
@@ -265,25 +271,41 @@
     }
     .icon-btn svg { width: 17px; height: 17px; }
  
-    .hero-content { display: flex; flex-direction: column; gap: 1.4rem; }
- 
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
+    /* Thin divider between profile and content */
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto 2.5rem;
       opacity: 0;
       animation: fadeUp 0.5s ease forwards 0.25s;
     }
-
-    .hero-about {
-      font-size: clamp(1rem, 1.9vw, 1.18rem);
-      color: var(--muted);
-      line-height: 1.85;
-      max-width: 620px;
+ 
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+    }
+ 
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
       opacity: 0;
-      animation: fadeUp 0.55s ease forwards 0.4s;
+      animation: fadeUp 0.5s ease forwards 0.3s;
+    }
+ 
+    .hero-about {
+      font-size: clamp(0.98rem, 1.6vw, 1.08rem);
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 640px;
+      opacity: 0;
+      animation: fadeUp 0.55s ease forwards 0.42s;
     }
     .hero-about strong { color: var(--text); font-weight: 600; }
  
@@ -291,6 +313,7 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
       opacity: 0;
       animation: fadeUp 0.55s ease forwards 0.55s;
     }
@@ -738,7 +761,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
-
+ 
   <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener" class="nav-resume">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
          stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
@@ -765,7 +788,7 @@
              onerror="this.style.display='none';">
       </div>
  
-      <h1 class="hero-name">ARBEN<br><span class="accent">TEMAJ</span></h1>
+      <h1 class="hero-name">ARBEN <span class="accent">TEMAJ</span></h1>
       <div class="hero-role">Software Developer</div>
  
       <div class="hero-icons">
@@ -791,13 +814,16 @@
       </div>
     </div>
  
+    <div class="hero-divider"></div>
+ 
+    <!-- Content: badge + about + CTAs, centered -->
     <div class="hero-content">
       <div class="hero-eyebrow">Open to opportunities</div>
  
       <p class="hero-about">
         <strong>CS graduate from CUNY Queens College</strong> with a focus on systems
         programming and real-time graphics. I built a full DirectX11 3D game engine from
-        scratch — PBR rendering, NVIDIA PhysX integration, skeletal animation — and have
+        scratch with PBR rendering, NVIDIA PhysX integration, and skeletal animations. Also, have
         shipped data compression tools and REST API applications along the way. Looking for
         my first engineering role to bring these skills into a professional setting.
       </p>
@@ -809,7 +835,6 @@
           </svg>
           View Projects
         </a>
-        
         <a href="/uploads/ATemaj_Resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
                stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
@@ -855,12 +880,12 @@
       </div><!-- /carousel -->
  
       <div class="flagship-content">
-        <span class="flagship-badge">★ Flagship Project</span>
+        <span class="flagship-badge">★ Current Project</span>
         <div class="flagship-title">3D Game Engine (v2)</div>
         <div class="flagship-desc">
           A closed-source real-time 3D engine featuring a physically-based rendering pipeline,
           NVIDIA PhysX integration, skeletal animation blending, and a full post-processing
-          stack — bloom, volumetric fog, and color grading.
+          stack with bloom, volumetric fog, and color grading.
         </div>
         <div class="chip-row">
           <span class="chip">C++</span>
@@ -894,7 +919,7 @@
       <div class="card reveal">
         <div class="card-tag">Systems · C++ / DirectX</div>
         <div class="card-title">3D Game Engine (v1)</div>
-        <div class="card-desc">A fully functional 3D engine built from scratch using DirectX11 — rendering pipelines, scene management, and real-time input. The foundation v2 was built on.</div>
+        <div class="card-desc">A fully functional 3D engine built from scratch using DirectX11 with rendering pipelines, scene management, and real-time input. The foundation v2 was built on.</div>
         <div class="chip-row" style="margin-top:0.2rem;">
           <span class="chip">C++</span>
           <span class="chip">DirectX 11</span>
@@ -1064,9 +1089,7 @@
       </div>
  
       <div class="reveal">
-        <form class="contact-form" name="contact" method="POST" netlify netlify-honeypot="_trap">
-          <input type="hidden" name="form-name" value="contact">
-          <div style="display:none"><label>Skip: <input name="_trap"></label></div>
+        <form class="contact-form" id="contact-form">
           <div class="field">
             <label for="c-name">Name</label>
             <input type="text" id="c-name" name="name" placeholder="Your name" required>
@@ -1079,7 +1102,8 @@
             <label for="c-msg">Message</label>
             <textarea id="c-msg" name="message" placeholder="What's on your mind?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-fill" style="width:100%;">Send Message</button>
+          <button type="submit" class="btn btn-fill" id="form-submit-btn" style="width:100%;">Send Message</button>
+          <div id="form-status" style="display:none; margin-top:0.5rem; font-size:0.85rem; text-align:center; padding:0.65rem; border-radius:6px;"></div>
         </form>
       </div>
     </div>
@@ -1166,6 +1190,52 @@
     sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
     navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${cur}`));
   }, { passive: true });
+  // ── Contact form (Formspree)
+  // Sign up free at formspree.io, create a form, and replace YOUR_FORM_ID below
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn   = document.getElementById('form-submit-btn');
+  const formStatus  = document.getElementById('form-status');
+ 
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+ 
+    const data = {
+      name:    document.getElementById('c-name').value,
+      email:   document.getElementById('c-email').value,
+      message: document.getElementById('c-msg').value,
+    };
+ 
+    try {
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data),
+      });
+ 
+      if (res.ok) {
+        contactForm.reset();
+        formStatus.style.display = 'block';
+        formStatus.style.background = 'rgba(125,249,170,0.08)';
+        formStatus.style.color = '#7df9aa';
+        formStatus.style.border = '1px solid rgba(125,249,170,0.2)';
+        formStatus.textContent = '✓ Message sent — I\'ll get back to you soon!';
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+      } else {
+        throw new Error('Server error');
+      }
+    } catch {
+      formStatus.style.display = 'block';
+      formStatus.style.background = 'rgba(255,80,80,0.08)';
+      formStatus.style.color = '#ff6b6b';
+      formStatus.style.border = '1px solid rgba(255,80,80,0.2)';
+      formStatus.textContent = '✕ Something went wrong. Try emailing me directly at arbentemaj@gmail.com';
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled = false;
+    }
+  });
 </script>
  
 </body>
